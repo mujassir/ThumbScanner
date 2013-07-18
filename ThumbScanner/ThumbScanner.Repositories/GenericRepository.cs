@@ -3,41 +3,55 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ThumbScanner.Entities;
+using System.Data.Objects;
 
 namespace ThumbScanner.Repositories
 {
     public class GenericRepository<T> : IRepository<T> where T : class
     {
         private ThumbScannerDBEntities db;
-
+        public GenericRepository()
+        {
+            db = SessionFactory.GetContext();
+        }
+        private ObjectSet<T> _objectSet;
+        public ObjectSet<T> ObjectSet
+        {
+            get
+            {
+                if (_objectContext == null)
+                    _objectContext = db.CreateObjectSet<T>();
+                return _objectContext;
+            }
+        }
         public IEnumerable<T> Get()
         {
-            throw new NotImplementedException();
+            return ObjectSet.ToList();
         }
 
         public IEnumerable<T> Get(Func<T, bool> predicate)
         {
-            throw new NotImplementedException();
+            return ObjectSet.Where(predicate).ToList()
         }
 
         public IQueryable<T> Query()
         {
-            throw new NotImplementedException();
+            return ObjectSet;
         }
 
         public IQueryable<T> Query(Func<T, bool> predicate)
         {
-            throw new NotImplementedException();
+           return ObjectSet.Where(predicate)
         }
 
         public T FirstOrDefault(Func<T, bool> predicate)
         {
-            throw new NotImplementedException();
+            return ObjectSet.FirstOrDefault(predicate);
         }
 
         public void Add(T entity)
         {
-            throw new NotImplementedException();
+            ObjectSet.AddObject(entity);
         }
 
         public void Update(T entity)
@@ -47,17 +61,17 @@ namespace ThumbScanner.Repositories
 
         public void Delete(T entity)
         {
-            throw new NotImplementedException();
+            ObjectSet.DeleteObject(entity);
         }
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            db.SaveChanges();
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            //db.Dispose();
         }
     }
 }
