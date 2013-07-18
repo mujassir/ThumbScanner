@@ -19,9 +19,9 @@ namespace ThumbScanner.Repositories
         {
             get
             {
-                if (_objectContext == null)
-                    _objectContext = db.CreateObjectSet<T>();
-                return _objectContext;
+                if (_objectSet == null)
+                    _objectSet = db.CreateObjectSet<T>();
+                return _objectSet;
             }
         }
         public IEnumerable<T> Get()
@@ -31,18 +31,15 @@ namespace ThumbScanner.Repositories
 
         public IEnumerable<T> Get(Func<T, bool> predicate)
         {
-            return ObjectSet.Where(predicate).ToList()
+            return ObjectSet.Where(predicate).ToList();
         }
 
         public IQueryable<T> Query()
         {
-            return ObjectSet;
+            return ObjectSet.AsQueryable<T>();
         }
 
-        public IQueryable<T> Query(Func<T, bool> predicate)
-        {
-           return ObjectSet.Where(predicate)
-        }
+       
 
         public T FirstOrDefault(Func<T, bool> predicate)
         {

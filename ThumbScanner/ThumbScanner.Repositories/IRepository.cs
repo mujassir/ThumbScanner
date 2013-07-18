@@ -10,7 +10,6 @@ namespace ThumbScanner.Repositories
         IEnumerable<T> Get();
         IEnumerable<T> Get(Func<T, bool> predicate);
         IQueryable<T> Query();
-        IQueryable<T> Query(Func<T, bool> predicate);
         T FirstOrDefault(Func<T, bool> predicate);
         void Add(T entity);
         void Update(T entity);
