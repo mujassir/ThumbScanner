@@ -10,9 +10,8 @@
         </EntityContainer>
         <EntityType Name="fmf">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="acc_cd" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="acc_cd" Type="varchar" Nullable="false" MaxLength="7" />
           <Property Name="name" Type="varchar" MaxLength="50" />
           <Property Name="f_name" Type="varchar" MaxLength="35" />
@@ -40,9 +39,8 @@
         </EntityContainer>
         <EntityType Name="fmf">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="acc_cd" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="acc_cd" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="f_name" MaxLength="35" FixedLength="false" Unicode="false" />
@@ -87,7 +85,6 @@
                 <ScalarProperty Name="f_name" ColumnName="f_name" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="acc_cd" ColumnName="acc_cd" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -112,7 +109,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="Model1" >
-        <EntityTypeShape EntityType="ThumbScannerDBModel.fmf" Width="1.5" PointX="0.75" PointY="0.75" Height="4.480205078125" />
+        <EntityTypeShape EntityType="ThumbScannerDBModel.fmf" Width="1.5" PointX="0.75" PointY="0.75" Height="4.2879036458333326" />
       </Diagram>
     </Diagrams>
   </Designer>

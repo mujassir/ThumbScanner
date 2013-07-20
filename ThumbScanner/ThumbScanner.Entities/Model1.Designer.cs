@@ -8,15 +8,15 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
-
 namespace ThumbScanner.Entities
 {
     #region Contexts
@@ -82,6 +82,7 @@ namespace ThumbScanner.Entities
         private ObjectSet<fmf> _fmfs;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -93,11 +94,11 @@ namespace ThumbScanner.Entities
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
@@ -113,50 +114,22 @@ namespace ThumbScanner.Entities
         /// <summary>
         /// Create a new fmf object.
         /// </summary>
-        /// <param name="id">Initial value of the Id property.</param>
         /// <param name="acc_cd">Initial value of the acc_cd property.</param>
-        public static fmf Createfmf(global::System.Int32 id, global::System.String acc_cd)
+        public static fmf Createfmf(global::System.String acc_cd)
         {
             fmf fmf = new fmf();
-            fmf.Id = id;
             fmf.acc_cd = acc_cd;
             return fmf;
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 Id
-        {
-            get
-            {
-                return _Id;
-            }
-            set
-            {
-                if (_Id != value)
-                {
-                    OnIdChanging(value);
-                    ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("Id");
-                    OnIdChanged();
-                }
-            }
-        }
-        private global::System.Int32 _Id;
-        partial void OnIdChanging(global::System.Int32 value);
-        partial void OnIdChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String acc_cd
         {
@@ -166,11 +139,14 @@ namespace ThumbScanner.Entities
             }
             set
             {
-                Onacc_cdChanging(value);
-                ReportPropertyChanging("acc_cd");
-                _acc_cd = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("acc_cd");
-                Onacc_cdChanged();
+                if (_acc_cd != value)
+                {
+                    Onacc_cdChanging(value);
+                    ReportPropertyChanging("acc_cd");
+                    _acc_cd = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("acc_cd");
+                    Onacc_cdChanged();
+                }
             }
         }
         private global::System.String _acc_cd;
@@ -562,9 +538,11 @@ namespace ThumbScanner.Entities
         partial void Onfinger10Changed();
 
         #endregion
+
     
     }
 
     #endregion
+
     
 }

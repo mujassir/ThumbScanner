@@ -15,5 +15,10 @@ namespace ThumbScanner.WinUI
         {
             InitializeComponent();
         }
+
+        private void ParentForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

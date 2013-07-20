@@ -8,9 +8,20 @@ namespace ThumbScanner.Repositories
 {
     public class fmfRepository : GenericRepository<fmf>
     {
-        public fmf GetById(int id)
+        public fmf GetByCode(string code)
         {
-            return FirstOrDefault(p => p.Id == id);
+            return FirstOrDefault(p => p.acc_cd == code);
         }
+
+        public void SaveTemplate(string code, byte[] tempate)
+        {
+            var fm = FirstOrDefault(p => p.acc_cd == code);
+            if (fm != null)
+            {
+                fm.template1 = tempate;
+                SaveChanges();
+            }
+        }
+
     }
 }
