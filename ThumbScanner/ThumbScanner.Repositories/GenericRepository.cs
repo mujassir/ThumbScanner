@@ -29,6 +29,9 @@ namespace ThumbScanner.Repositories
             return ObjectSet.ToList();
         }
 
+       
+
+
         public IEnumerable<T> Get(Func<T, bool> predicate)
         {
             return ObjectSet.Where(predicate).ToList();

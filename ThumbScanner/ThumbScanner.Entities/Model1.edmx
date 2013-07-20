@@ -4,20 +4,94 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ThumbScannerDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityContainer Name="ThumbScannerDBModelStoreContainer" />
-      </Schema>
-    </edmx:StorageModels>
+    <Schema Namespace="ThumbScannerDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ThumbScannerDBModelStoreContainer">
+          <EntitySet Name="fmf" EntityType="ThumbScannerDBModel.Store.fmf" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="fmf">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="acc_cd" Type="varchar" Nullable="false" MaxLength="7" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="f_name" Type="varchar" MaxLength="35" />
+          <Property Name="desg" Type="varchar" MaxLength="20" />
+          <Property Name="template1" Type="varbinary(max)" />
+          <Property Name="template2" Type="varbinary(max)" />
+          <Property Name="template3" Type="varbinary(max)" />
+          <Property Name="finger1" Type="numeric" Precision="1" />
+          <Property Name="finger2" Type="numeric" Precision="1" />
+          <Property Name="finger3" Type="numeric" Precision="1" />
+          <Property Name="finger4" Type="numeric" Precision="1" />
+          <Property Name="finger5" Type="numeric" Precision="1" />
+          <Property Name="finger6" Type="numeric" Precision="1" />
+          <Property Name="finger7" Type="numeric" Precision="1" />
+          <Property Name="finger8" Type="numeric" Precision="1" />
+          <Property Name="finger9" Type="numeric" Precision="1" />
+          <Property Name="finger10" Type="numeric" Precision="1" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ThumbScannerDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityContainer Name="ThumbScannerDBEntities" annotation:LazyLoadingEnabled="true" />
+        <EntityContainer Name="ThumbScannerDBEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="fmfs" EntityType="ThumbScannerDBModel.fmf" />
+        </EntityContainer>
+        <EntityType Name="fmf">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="acc_cd" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="f_name" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="desg" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Binary" Name="template1" MaxLength="Max" FixedLength="false" />
+          <Property Type="Binary" Name="template2" MaxLength="Max" FixedLength="false" />
+          <Property Type="Binary" Name="template3" MaxLength="Max" FixedLength="false" />
+          <Property Type="Decimal" Name="finger1" Precision="1" Scale="0" />
+          <Property Type="Decimal" Name="finger2" Precision="1" Scale="0" />
+          <Property Type="Decimal" Name="finger3" Precision="1" Scale="0" />
+          <Property Type="Decimal" Name="finger4" Precision="1" Scale="0" />
+          <Property Type="Decimal" Name="finger5" Precision="1" Scale="0" />
+          <Property Type="Decimal" Name="finger6" Precision="1" Scale="0" />
+          <Property Type="Decimal" Name="finger7" Precision="1" Scale="0" />
+          <Property Type="Decimal" Name="finger8" Precision="1" Scale="0" />
+          <Property Type="Decimal" Name="finger9" Precision="1" Scale="0" />
+          <Property Type="Decimal" Name="finger10" Precision="1" Scale="0" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ThumbScannerDBModelStoreContainer" CdmEntityContainer="ThumbScannerDBEntities" />
+        <EntityContainerMapping StorageEntityContainer="ThumbScannerDBModelStoreContainer" CdmEntityContainer="ThumbScannerDBEntities" >
+          <EntitySetMapping Name="fmfs">
+            <EntityTypeMapping TypeName="ThumbScannerDBModel.fmf">
+              <MappingFragment StoreEntitySet="fmf">
+                <ScalarProperty Name="finger10" ColumnName="finger10" />
+                <ScalarProperty Name="finger9" ColumnName="finger9" />
+                <ScalarProperty Name="finger8" ColumnName="finger8" />
+                <ScalarProperty Name="finger7" ColumnName="finger7" />
+                <ScalarProperty Name="finger6" ColumnName="finger6" />
+                <ScalarProperty Name="finger5" ColumnName="finger5" />
+                <ScalarProperty Name="finger4" ColumnName="finger4" />
+                <ScalarProperty Name="finger3" ColumnName="finger3" />
+                <ScalarProperty Name="finger2" ColumnName="finger2" />
+                <ScalarProperty Name="finger1" ColumnName="finger1" />
+                <ScalarProperty Name="template3" ColumnName="template3" />
+                <ScalarProperty Name="template2" ColumnName="template2" />
+                <ScalarProperty Name="template1" ColumnName="template1" />
+                <ScalarProperty Name="desg" ColumnName="desg" />
+                <ScalarProperty Name="f_name" ColumnName="f_name" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="acc_cd" ColumnName="acc_cd" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
@@ -37,7 +111,9 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="Model1" />
+      <Diagram Name="Model1" >
+        <EntityTypeShape EntityType="ThumbScannerDBModel.fmf" Width="1.5" PointX="0.75" PointY="0.75" Height="4.480205078125" />
+      </Diagram>
     </Diagrams>
   </Designer>
 </edmx:Edmx>

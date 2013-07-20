@@ -63,10 +63,508 @@ namespace ThumbScanner.Entities
     
         #endregion
     
+        #region ObjectSet Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<fmf> fmfs
+        {
+            get
+            {
+                if ((_fmfs == null))
+                {
+                    _fmfs = base.CreateObjectSet<fmf>("fmfs");
+                }
+                return _fmfs;
+            }
+        }
+        private ObjectSet<fmf> _fmfs;
+
+        #endregion
+        #region AddTo Methods
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the fmfs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTofmfs(fmf fmf)
+        {
+            base.AddObject("fmfs", fmf);
+        }
+
+        #endregion
     }
     
 
     #endregion
     
+    #region Entities
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="ThumbScannerDBModel", Name="fmf")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class fmf : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new fmf object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="acc_cd">Initial value of the acc_cd property.</param>
+        public static fmf Createfmf(global::System.Int32 id, global::System.String acc_cd)
+        {
+            fmf fmf = new fmf();
+            fmf.Id = id;
+            fmf.acc_cd = acc_cd;
+            return fmf;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String acc_cd
+        {
+            get
+            {
+                return _acc_cd;
+            }
+            set
+            {
+                Onacc_cdChanging(value);
+                ReportPropertyChanging("acc_cd");
+                _acc_cd = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("acc_cd");
+                Onacc_cdChanged();
+            }
+        }
+        private global::System.String _acc_cd;
+        partial void Onacc_cdChanging(global::System.String value);
+        partial void Onacc_cdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                OnnameChanging(value);
+                ReportPropertyChanging("name");
+                _name = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("name");
+                OnnameChanged();
+            }
+        }
+        private global::System.String _name;
+        partial void OnnameChanging(global::System.String value);
+        partial void OnnameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String f_name
+        {
+            get
+            {
+                return _f_name;
+            }
+            set
+            {
+                Onf_nameChanging(value);
+                ReportPropertyChanging("f_name");
+                _f_name = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("f_name");
+                Onf_nameChanged();
+            }
+        }
+        private global::System.String _f_name;
+        partial void Onf_nameChanging(global::System.String value);
+        partial void Onf_nameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String desg
+        {
+            get
+            {
+                return _desg;
+            }
+            set
+            {
+                OndesgChanging(value);
+                ReportPropertyChanging("desg");
+                _desg = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("desg");
+                OndesgChanged();
+            }
+        }
+        private global::System.String _desg;
+        partial void OndesgChanging(global::System.String value);
+        partial void OndesgChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] template1
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_template1);
+            }
+            set
+            {
+                Ontemplate1Changing(value);
+                ReportPropertyChanging("template1");
+                _template1 = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("template1");
+                Ontemplate1Changed();
+            }
+        }
+        private global::System.Byte[] _template1;
+        partial void Ontemplate1Changing(global::System.Byte[] value);
+        partial void Ontemplate1Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] template2
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_template2);
+            }
+            set
+            {
+                Ontemplate2Changing(value);
+                ReportPropertyChanging("template2");
+                _template2 = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("template2");
+                Ontemplate2Changed();
+            }
+        }
+        private global::System.Byte[] _template2;
+        partial void Ontemplate2Changing(global::System.Byte[] value);
+        partial void Ontemplate2Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] template3
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_template3);
+            }
+            set
+            {
+                Ontemplate3Changing(value);
+                ReportPropertyChanging("template3");
+                _template3 = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("template3");
+                Ontemplate3Changed();
+            }
+        }
+        private global::System.Byte[] _template3;
+        partial void Ontemplate3Changing(global::System.Byte[] value);
+        partial void Ontemplate3Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> finger1
+        {
+            get
+            {
+                return _finger1;
+            }
+            set
+            {
+                Onfinger1Changing(value);
+                ReportPropertyChanging("finger1");
+                _finger1 = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("finger1");
+                Onfinger1Changed();
+            }
+        }
+        private Nullable<global::System.Decimal> _finger1;
+        partial void Onfinger1Changing(Nullable<global::System.Decimal> value);
+        partial void Onfinger1Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> finger2
+        {
+            get
+            {
+                return _finger2;
+            }
+            set
+            {
+                Onfinger2Changing(value);
+                ReportPropertyChanging("finger2");
+                _finger2 = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("finger2");
+                Onfinger2Changed();
+            }
+        }
+        private Nullable<global::System.Decimal> _finger2;
+        partial void Onfinger2Changing(Nullable<global::System.Decimal> value);
+        partial void Onfinger2Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> finger3
+        {
+            get
+            {
+                return _finger3;
+            }
+            set
+            {
+                Onfinger3Changing(value);
+                ReportPropertyChanging("finger3");
+                _finger3 = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("finger3");
+                Onfinger3Changed();
+            }
+        }
+        private Nullable<global::System.Decimal> _finger3;
+        partial void Onfinger3Changing(Nullable<global::System.Decimal> value);
+        partial void Onfinger3Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> finger4
+        {
+            get
+            {
+                return _finger4;
+            }
+            set
+            {
+                Onfinger4Changing(value);
+                ReportPropertyChanging("finger4");
+                _finger4 = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("finger4");
+                Onfinger4Changed();
+            }
+        }
+        private Nullable<global::System.Decimal> _finger4;
+        partial void Onfinger4Changing(Nullable<global::System.Decimal> value);
+        partial void Onfinger4Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> finger5
+        {
+            get
+            {
+                return _finger5;
+            }
+            set
+            {
+                Onfinger5Changing(value);
+                ReportPropertyChanging("finger5");
+                _finger5 = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("finger5");
+                Onfinger5Changed();
+            }
+        }
+        private Nullable<global::System.Decimal> _finger5;
+        partial void Onfinger5Changing(Nullable<global::System.Decimal> value);
+        partial void Onfinger5Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> finger6
+        {
+            get
+            {
+                return _finger6;
+            }
+            set
+            {
+                Onfinger6Changing(value);
+                ReportPropertyChanging("finger6");
+                _finger6 = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("finger6");
+                Onfinger6Changed();
+            }
+        }
+        private Nullable<global::System.Decimal> _finger6;
+        partial void Onfinger6Changing(Nullable<global::System.Decimal> value);
+        partial void Onfinger6Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> finger7
+        {
+            get
+            {
+                return _finger7;
+            }
+            set
+            {
+                Onfinger7Changing(value);
+                ReportPropertyChanging("finger7");
+                _finger7 = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("finger7");
+                Onfinger7Changed();
+            }
+        }
+        private Nullable<global::System.Decimal> _finger7;
+        partial void Onfinger7Changing(Nullable<global::System.Decimal> value);
+        partial void Onfinger7Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> finger8
+        {
+            get
+            {
+                return _finger8;
+            }
+            set
+            {
+                Onfinger8Changing(value);
+                ReportPropertyChanging("finger8");
+                _finger8 = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("finger8");
+                Onfinger8Changed();
+            }
+        }
+        private Nullable<global::System.Decimal> _finger8;
+        partial void Onfinger8Changing(Nullable<global::System.Decimal> value);
+        partial void Onfinger8Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> finger9
+        {
+            get
+            {
+                return _finger9;
+            }
+            set
+            {
+                Onfinger9Changing(value);
+                ReportPropertyChanging("finger9");
+                _finger9 = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("finger9");
+                Onfinger9Changed();
+            }
+        }
+        private Nullable<global::System.Decimal> _finger9;
+        partial void Onfinger9Changing(Nullable<global::System.Decimal> value);
+        partial void Onfinger9Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> finger10
+        {
+            get
+            {
+                return _finger10;
+            }
+            set
+            {
+                Onfinger10Changing(value);
+                ReportPropertyChanging("finger10");
+                _finger10 = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("finger10");
+                Onfinger10Changed();
+            }
+        }
+        private Nullable<global::System.Decimal> _finger10;
+        partial void Onfinger10Changing(Nullable<global::System.Decimal> value);
+        partial void Onfinger10Changed();
+
+        #endregion
+    
+    }
+
+    #endregion
     
 }
