@@ -168,7 +168,7 @@
             // 
             this.Picture.BackColor = System.Drawing.SystemColors.Window;
             this.Picture.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Picture.Location = new System.Drawing.Point(12, 27);
+            this.Picture.Location = new System.Drawing.Point(12, 233);
             this.Picture.Name = "Picture";
             this.Picture.Size = new System.Drawing.Size(200, 181);
             this.Picture.TabIndex = 7;
@@ -178,7 +178,7 @@
             // 
             this.imgPicture.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.imgPicture.Image = global::ThumbScanner.WinUI.Properties.Resources.no_image_blog_one;
-            this.imgPicture.Location = new System.Drawing.Point(12, 214);
+            this.imgPicture.Location = new System.Drawing.Point(12, 27);
             this.imgPicture.Name = "imgPicture";
             this.imgPicture.Size = new System.Drawing.Size(200, 200);
             this.imgPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
