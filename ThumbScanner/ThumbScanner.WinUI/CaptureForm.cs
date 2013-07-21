@@ -153,7 +153,7 @@ namespace ThumbScanner.WinUI
         protected void SetPrompt(string prompt)
         {
         }
-        protected void MakeReport(string message)
+        protected virtual void MakeReport(string message)
         {
         }
 

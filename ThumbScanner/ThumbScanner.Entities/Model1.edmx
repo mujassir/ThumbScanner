@@ -29,6 +29,7 @@
           <Property Name="finger8" Type="numeric" Precision="1" />
           <Property Name="finger9" Type="numeric" Precision="1" />
           <Property Name="finger10" Type="numeric" Precision="1" />
+          <Property Name="picture" Type="varbinary(max)" />
         </EntityType>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -58,6 +59,7 @@
           <Property Type="Decimal" Name="finger8" Precision="1" Scale="0" />
           <Property Type="Decimal" Name="finger9" Precision="1" Scale="0" />
           <Property Type="Decimal" Name="finger10" Precision="1" Scale="0" />
+          <Property Type="Binary" Name="picture" MaxLength="Max" FixedLength="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -68,6 +70,7 @@
           <EntitySetMapping Name="fmfs">
             <EntityTypeMapping TypeName="ThumbScannerDBModel.fmf">
               <MappingFragment StoreEntitySet="fmf">
+                <ScalarProperty Name="picture" ColumnName="picture" />
                 <ScalarProperty Name="finger10" ColumnName="finger10" />
                 <ScalarProperty Name="finger9" ColumnName="finger9" />
                 <ScalarProperty Name="finger8" ColumnName="finger8" />
@@ -109,7 +112,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="Model1" >
-        <EntityTypeShape EntityType="ThumbScannerDBModel.fmf" Width="1.5" PointX="0.75" PointY="0.75" Height="4.2879036458333326" />
+        <EntityTypeShape EntityType="ThumbScannerDBModel.fmf" Width="1.5" PointX="5.2851885786676727" PointY="22.5383059040356" />
       </Diagram>
     </Diagrams>
   </Designer>

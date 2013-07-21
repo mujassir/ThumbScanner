@@ -13,12 +13,15 @@ namespace ThumbScanner.Repositories
             return FirstOrDefault(p => p.acc_cd == code);
         }
 
-        public void SaveTemplate(string code, byte[] tempate)
+        public void Save(fmf entity)
         {
-            var fm = FirstOrDefault(p => p.acc_cd == code);
+            var fm = FirstOrDefault(p => p.acc_cd == entity.acc_cd );
             if (fm != null)
             {
-                fm.template1 = tempate;
+                fm.template1 = entity.template1;
+                fm.template2 = entity.template2;
+                fm.template3 = entity.template3;
+                fm.picture = entity.picture;
                 SaveChanges();
             }
         }

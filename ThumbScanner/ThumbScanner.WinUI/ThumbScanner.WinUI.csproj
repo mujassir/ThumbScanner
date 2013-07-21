@@ -65,6 +65,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WebCam_Capture">
+      <HintPath>..\Includes\WebCam_Capture.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CaptureForm.cs">
@@ -73,6 +76,7 @@
     <Compile Include="CaptureForm.designer.cs">
       <DependentUpon>CaptureForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Code\ImpressionVerifier.cs" />
     <Compile Include="EnrollmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +89,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Code\ImageUtitlity.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +127,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="VerificationForm.resx">
       <DependentUpon>VerificationForm.cs</DependentUpon>
@@ -150,6 +156,12 @@
       <Project>{6FE6F884-8A16-4BED-8659-3B36C3AB1FA8}</Project>
       <Name>ThumbScanner.Repositories</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-image-blog-one.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hands.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
